@@ -27,7 +27,7 @@ public:
         my_allocator_.initialize(t_my_allocator_size, sizeof(Node<T>));
         // Initialize the queue head or tail here
         Node<T>* newNode = (Node<T>*)my_allocator_.newNode();
-        newNode->next = nullptr;
+        newNode->next = NULL;
         q_head = q_tail = newNode;
         my_allocator_.freeNode(newNode);
     }
@@ -57,8 +57,8 @@ public:
         *value = new_head->value;
         //Update q_head
         q_head = new_head;
-        my_allocator_.freeNode(node);
         mutex.unlock();
+        my_allocator_.freeNode(node);
         return true;
     }
 
