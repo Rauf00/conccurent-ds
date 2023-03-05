@@ -29,7 +29,6 @@ public:
         Node<T>* newNode = (Node<T>*)my_allocator_.newNode();
         newNode->next = NULL;
         q_head = q_tail = newNode;
-        my_allocator_.freeNode(newNode);
     }
 
     void enqueue(T value)

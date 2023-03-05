@@ -48,7 +48,6 @@ public:
         Node<T>* newNode = (Node<T>*)my_allocator_.newNode();
         newNode->next.ptr = NULL;
         q_head.ptr = q_tail.ptr = newNode;
-        my_allocator_.freeNode(newNode);
     }
 
     pointer_t<Node<T>> incrementAndCombine(Node<T>* ptr, uint count){
